@@ -15,15 +15,26 @@
 5. 실험 내용 및 결과
 
 기능적 근적외선분광기(fNIRS)를 이용하여 특정 작업 수행 시 측정한 뇌신호를 machine learning을 사용하여 작업별로 분류하는 것을 목적으로 함.
+
 Task는 mental arithmetic, mental counting, puzzle solving 3가지 이며 각 세션은 5번의 시행으로 구성.
+
 실험에 사용된 장비는 ISS Imagent fNIRS 장비이며 690nm, 830nm 파장을 사용하며 sampling rate는 15.625Hz 임.
+
 측정 영역은 설정한 task에 반응하는 영역인 전두엽피질이며 총 채널수는 16개 임.
+
 얻어진 데이터는 MBLL(Modified-Beer Lambert Law)에 의해 대뇌 피질의 HbO, HbR 농도로 계산 후 band-pass filtering(0.01~0.1Hz).
+
 각 trial(task+rest:30sec)단위로 데이터 분할 (15.625*30=468개의 데이터 포인트)
+
 정확도 83.33%
+
 1d convolution 을 거친후 LSTM모델에 softmax activation function을 이용하여 multiclass classification을 하였음. 
+
 Optimizer는 SDG를 이용하여 hyper parameter를 실험적으로 조절하였고 최대 정확도 83%의 결과를 획득함.
+
 Training 시간은 한 epoch 당 3초정도 이며 20epoch, batch size는 8을 사용함.
+
+
 6.  2번째 셀의
 
 df = pd.read_csv('./data/sub1_total.txt', sep=',', 
