@@ -14,7 +14,8 @@
 
 5. 
 
-6. 2번째 코드 셀의
+6.  2번째 셀의
+
 df = pd.read_csv('./data/sub1_total.txt', sep=',', 
                  parse_dates={'dt' : ['Time']}, infer_datetime_format=True, 
                  low_memory=False, na_values=['nan','?'], index_col='dt')
@@ -28,4 +29,4 @@ df7 = pd.read_csv('./data/sub8_total.txt', sep=',',
                  parse_dates={'dt' : ['Time']}, infer_datetime_format=True, 
                  low_memory=False, na_values=['nan','?'], index_col='dt')
 
-위 코드의 './data/sub피험자번호_total.txt' 부분을 data path에 따라 수정하시면 볼 수 있습니다.
+위 코드의 './data/sub피험자번호(1~8)_total.txt' 부분을 data path에 따라 수정하시면 볼 수 있습니다.
